@@ -43,6 +43,7 @@
       />
       <audio src="storm-sound.mp3" id="storm" loop></audio>
       <form>
+        <!-- Exercise 4 -->
         <h4>Set barometric pressure</h4>
         <label for="barometer"><output id="num">30</output></label>
         <input
@@ -67,23 +68,34 @@
       </form>
     </div>
     <script>
+      // Exercise 3
       const barometerInput = document.getElementById("barometer");
 
       function changeWeather(evt) {
         evt.preventDefault();
 
+        // Exercise 4
         const pressure = barometerInput.value;
         console.log(pressure);
 
+        // Exercise 6
         if (pressure >= 30) {
           sunny();
-        } else if (pressure >= 29 && pressure < 30) {
+        } 
+        // Exercise 7
+        else if (pressure >= 29 && pressure < 30) {
           addClouds();
-        } else if (pressure >= 28 && pressure < 29) {
+        } 
+        // Exercise 8
+        else if (pressure >= 28 && pressure < 29) {
           addRainClouds();
-        } else if (pressure >= 27 && pressure < 28) {
+        } 
+        // Exercise 9
+        else if (pressure >= 27 && pressure < 28) {
           makeRain();
-        } else if (pressure < 27) {
+        } 
+        // Bonus
+        else if (pressure < 27) {
           makeRain();
           const audio = document.getElementById("storm");
           audio.play();
@@ -92,6 +104,7 @@
         }
       }
 
+      // Exercise 5
       barometerInput.addEventListener("change", changeWeather);
     </script>
   </body>
